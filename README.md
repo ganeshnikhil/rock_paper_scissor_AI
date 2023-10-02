@@ -1,10 +1,10 @@
 # rock_paper_scissor_AI
 # Rock-Paper-Scissors Game with Computer Prediction
 
-`basic_rps.c'
+`basic_rps.c`
    ##is the basic implimentation of roc paper scissor prediction model .
 
-`advance_rps.c'
+`advance_rps.c`
    ##is taking more powerfull approach to predict  the player move in rock-paper-scissor 
 
 
