@@ -2,10 +2,10 @@
 # Rock-Paper-Scissors Game with Computer Prediction
 
 `basic_rps.c`
-   ##is the basic implimentation of roc paper scissor prediction model .
+   ## is the basic implimentation of roc paper scissor prediction model .
 
 `advance_rps.c`
-   ##is taking more powerfull approach to predict  the player move in rock-paper-scissor 
+   ## is taking more powerfull approach to predict  the player move in rock-paper-scissor 
 
 
 This is an advanced implementation of the Rock-Paper-Scissors game in C, where the computer tries to predict the player's move and win the match. In addition to predicting the player's move, the program includes adaptive strategies and a threshold mechanism to make the computer's gameplay more dynamic.
