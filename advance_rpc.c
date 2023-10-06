@@ -52,7 +52,6 @@ int predict(int current) {
             flag=0;
          }
       }
-    }
       last_player_move=0;
       //printf("threshold:%d\n", threshold);
    }
