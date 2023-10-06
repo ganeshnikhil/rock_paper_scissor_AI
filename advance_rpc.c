@@ -6,9 +6,10 @@ int count_rock, count_paper, count_scissor;
 int computer_score, player_score;
 int last_player_move = 0;
 int current_player_move = 0;
-int threshold = 2;
+int threshold = 0;
 int flag=0;
-
+int threshold_postive_limit = 2;
+int threshold_negative_limit = -2;
 void swap() {
    int temp;
    temp = last_player_move;
@@ -38,19 +39,20 @@ int predict(int current) {
    int total_draw = current - (player_score + computer_score);
    // it it losses 5 more than player and same for draw the match
    if (score_difference >= 5 || total_draw >= 5) {
-      //decrement threshold to adjust the computer game play when he is lossing or drawing match
-      if (flag==0){
-         threshold--;
-         if (threshold==-2){
-            flag=1;
-           }
-      }
       // increment threshold to ajust the computer game play when he is lossing or drawing mathc
-      else if(flag==1){
+      if(flag==0){
          threshold++;
-         if (threshold==2){
-            flag=0;
+         if (threshold==threshold_postive_limit){
+            flag=1;
          }
+      }
+
+      //decrement threshold to adjust the computer game play when he is lossing or drawing match
+      else if (flag==1){
+         threshold--;
+         if (threshold==threshold_negative_limit){
+            flag=0;
+           }
       }
       last_player_move=0;
       //printf("threshold:%d\n", threshold);
@@ -82,7 +84,6 @@ int predict(int current) {
 
 void update_score(int user_input, int current) {
    int predi = predict(current);
-
    if (user_input == 1) {
       if (predi == 1) {
          printf("Draw Rock cancels Rock..\n");
